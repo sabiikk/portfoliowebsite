@@ -1,0 +1,117 @@
+/* Navigation Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 10%;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+    font-size: 16px;
+}
+h2{
+    font-size: 40px;
+}
+
+/* Styling for each Navigation Link */
+.nav-menu li {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Anchor Link styling */
+.anchor-link {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+/* Underline Effect */
+.nav-menu li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(270deg, #DA7C25, #B923E1);
+    transition: width 0.4s ease-in-out;
+}
+#cntme{
+    padding: 20px 55px;
+    border-radius: 50px;
+    border: 2px  solid #ffffff;
+    cursor: pointer;
+    
+}
+#cntme:hover{
+background-color:#DA7C25;
+color: aliceblue;
+
+}
+/* Hover Effect to Expand the Underline */
+.nav-menu li:hover::after {
+    width: 100%;
+}
+
+/* Hover Effect for the Link Color */
+.nav-menu li:hover .anchor-link {
+    color: #DA7C25; /* Optional: Change the text color on hover */
+}
+
+/* Mobile Specific Styles */
+.nav-mob-close, .nav-mob-open {
+    display: none;
+    cursor: pointer;
+}
+.nav-mob-open {
+    width: 30px;
+}
+@media(max-width:768px) {
+    .navbar {
+        margin: 20px 6%;
+    }
+    .nav-connect {
+        display: none;
+    }
+    .nav-mob-open {
+        display: block;
+        position: absolute;
+        right: 30px;
+    }
+    .nav-mob-close {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 7%;
+        width: 30px;
+    }
+    .navbar ul {
+        position: fixed;
+        flex-direction: column;
+        align-items: start;
+        top: 0;
+        gap: 30px;
+        background-color: #1F0016;
+        width: 300px;
+        height: 100%;
+        z-index: 2;
+        transition: right 0.5s;
+        right: -300px;
+        padding-top: 100px;
+    }
+    .nav-menu li {
+        font-size: 22px;
+        padding-left: 50px;
+        flex-direction: row;
+        gap: 20px;
+    }
+}
